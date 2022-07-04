@@ -204,6 +204,42 @@ function redirect(string $url): void
 
 
 /**
+ * ###############
+ * ###   URL   ###
+ * ###############
+ */
+
+/**
+ * @param string $date
+ * @param string $format
+ * @return string
+ */
+function date_fmt($date = "now", $format = "d/m/Y H\hi")
+{
+    $date = (empty($date) ? "now" : $date);
+    return (new DateTime($date))->format($format);    
+}
+
+/**
+ * @param string $date
+ * @return string
+ */
+function date_fmt_br($date = "now")//Nativa data atual
+{
+    return (new DateTime($date))->format(CONF_DATE_BR);    
+}
+
+/**
+ * @param string $date
+ * @return string
+ */
+function date_fmt_app($date = "now")
+{
+    return (new DateTime($date))->format(CONF_DATE_APP);
+}
+
+
+/**
  * ################
  * ###   CORE   ###
  * ################
